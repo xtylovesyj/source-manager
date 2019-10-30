@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  & > header {
+    height: 50px;
+    background: black;
+    color: white;
+  }
 }
 
 .App-logo {
@@ -19,8 +24,4 @@
 
 .App-link {
   color: #09d3ac;
-}
-header {
-  height: 50px;
-  background: black;
 }
