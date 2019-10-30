@@ -23,14 +23,18 @@ function App() {
   };
   return (
     <div className='App'>
-      <header className="header">321</header>
-      <Dragger {...props}>
-        <p className='ant-upload-drag-icon'>
-          <Icon type='inbox' />
-        </p>
-        <p className='ant-upload-text'>点击或拖拽文件到这个区域进行文件上传</p>
-        <p className='ant-upload-hint'>支持多文件上传</p>
-      </Dragger>
+      <header className='header'>Swagger</header>
+      <div className='dragger-container'>
+        <Dragger {...props}>
+          <p className='ant-upload-drag-icon'>
+            <Icon type='inbox' />
+          </p>
+          <p className='ant-upload-text'>
+            点击或拖拽文件到这个区域进行文件上传
+          </p>
+          <p className='ant-upload-hint'>支持多文件上传</p>
+        </Dragger>
+      </div>
     </div>
   );
 }
