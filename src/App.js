@@ -23,7 +23,7 @@ function App() {
   };
   return (
     <div className='App'>
-      
+      <header className="header">321</header>
       <Dragger {...props}>
         <p className='ant-upload-drag-icon'>
           <Icon type='inbox' />
