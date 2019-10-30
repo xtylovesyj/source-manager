@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { Upload, Icon, message } from 'antd';
+import axios from 'axios';
 
 function App() {
   const { Dragger } = Upload;
@@ -8,13 +9,22 @@ function App() {
   const props = {
     name: 'file',
     multiple: true,
-    action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+    action: 'https://sunshine.phar.umich.edu:8008/ppm',
+    data: {
+      topology_in: true,
+      heteroatoms: false,
+      user_email: '459828686@qq.com'
+    },
     onChange(info) {
       const { status } = info.file;
       if (status !== 'uploading') {
         console.log(info.file, info.fileList);
       }
       if (status === 'done') {
+        console.log(111111111111, info.file.response.links_link);
+        axios.get(info.file.response.links_link).then(data => {
+          console.log(data.data);
+        });
         message.success(`${info.file.name} file uploaded successfully.`);
       } else if (status === 'error') {
         message.error(`${info.file.name} file upload failed.`);
@@ -23,7 +33,7 @@ function App() {
   };
   return (
     <div className='App'>
-      <header className="header">321</header>
+      <header className='header'>321</header>
       <Dragger {...props}>
         <p className='ant-upload-drag-icon'>
           <Icon type='inbox' />
