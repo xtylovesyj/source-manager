@@ -12,6 +12,10 @@
     background: #245f9c;
     color: white;
     font-weight: bolder;
+    & > img {
+      height: 35px;
+      margin-right: 15px;
+    }
   }
   & > .dragger-container {
     margin-top: 50px;

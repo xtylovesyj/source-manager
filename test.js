@@ -1,1 +1,4 @@
-console.log(/href=\w*\.pdb/gi.exec('href=fsdafdsa.pdb'));
+let a =
+  '<trclass="rowlight"><td>A</td><td>38</td><td>15-35,40-63,65,76-78,81,85,87-125,151,165-184,191,194-215,227,230-233,235,238,241-265,279-298,300,320,324,327,331,336,338-364,366-367,377-395,399-426,445,447-469,472,476,484-503,601</td>';
+const splitData = a.split('<td>');
+console.log(splitData[splitData.length - 1].replace('</td>', '').split(','));
