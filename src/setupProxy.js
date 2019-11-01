@@ -3,9 +3,12 @@ module.exports = function(app) {
   app.use(
     '/api',
     proxy({
-      target: 'https://www.mocky.io',
+      target: 'https://storage.googleapis.com',
       changeOrigin: true,
-      secure: false //配置关闭证书签名验证
+      secure: false, //配置关闭证书签名验证
+      pathRewrite: {
+        '^/api': '/'
+      }
     })
   );
 };
